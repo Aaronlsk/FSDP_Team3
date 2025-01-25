@@ -26,7 +26,7 @@ const ProtectedRoute = ({ children }) => {
         // Validate token with backend
         const validateToken = async () => {
             try {
-                const response = await fetch('http://192.168.18.66:3001/api/auth/validate', {
+                const response = await fetch(`${process.env.REACT_APP_API_URL}/api/auth/validate`, {
                     headers: {
                         'Authorization': `Bearer ${token}`
                     }
